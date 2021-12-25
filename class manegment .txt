@@ -1,0 +1,203 @@
+#include <iostream>
+
+using namespace std;
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class complex 
+{
+    private :
+    string arr1[50] ,arr2[50] ,arr3[50] ,arr4[50],arr5[50];
+    int total=0 ;
+    public :
+    void menue()
+    {
+        cout<<"\n\n\n **************Welcome to our the class manegemnet ****************";
+        cout<<"\n\n\n 1.Enter student data:--";
+        cout<<"\n\n\n 2. show student data :--";
+        cout<<"\n\n\n 3. Delate student data:--";
+        cout<<"\n\n\n 4. update student data:--";
+        cout<<"\n\n\n 5.search student data:--";
+        cout <<"\n\n\n 6.Exit :--";
+        
+    }
+         void setdata()
+         {
+             int choice;
+             cout<<"\n\n\nEnter the number of teh student you want :--";
+             cin>>choice;
+             if(total==0)
+             {
+             total=total+choice;
+             for (int i=0;i<choice ;i++)
+              
+              {
+               cout<<"\n\n\n Enter no of the data of the student :--"<<i+1;
+               cout<<"\n\n\nEnter the name :--";
+               cin>>arr1[i];
+               cout<<"\n\n\nEnter the div of student :--";
+               cin>>arr2[i];
+               cout<<"\n\n\nEnter the course of the student :--";
+               cin>>arr3[i];
+               cout<<"\n\n\nEnter the roll no of the student :--";
+               cin>>arr4[i];
+               cout<<"\n\n\n Enter the contact of the student :--";
+               cin>>arr5[i];
+              }
+               
+         }
+         else
+         {
+             for (int i=total;i<total+choice  ;i++)
+              
+              {
+               cout<<"\n\n\n Enter no of the data of the student :--"<<i+1;
+               cout<<"\n\n\nEnter the name :--";
+               cin>>arr1[i];
+               cout<<"\n\n\nEnter the div of student :--";
+               cin>>arr2[i];
+               cout<<"\n\n\nEnter the course of the student :--";
+               cin>>arr3[i];
+               cout<<"\n\n\nEnter the roll no of the student :--";
+               cin>>arr4[i];
+               cout<<"\n\n\n Enter the contact of the student :--";
+               cin>>arr5[i];
+              }
+              total=total+choice;
+         }
+         }
+         void showdata()
+         {
+             for (int i=0;i<total;i++)
+             {
+                 cout<<"\n\n\n Show data "<<i+1;
+                 cout<<"\n\n\n The name of the student is :--"<<arr1[i];
+                 cout<<"\n\n\n The div of the student is the :--"<<arr2[i];
+                 cout<<"\n\n\n The course of the student is :--"<<arr3[i];
+                 cout<<"\n\n\n The rollno of the student is :--"<<arr4[i];
+                 cout<<"\n\n\n The contact number of the studengt :--"<<arr5[i];
+                
+                 
+                 
+             }
+             
+         }
+         void delatedata()
+         {
+             int a;
+             string rollno;
+             cout<<"\n\n\n1. You want to delate the all teh student :--";
+             cout<<"\n\n\n2. you want to delate specific student :--";
+             cin>>a;
+             if(a==1)
+             {
+                 total=0;
+                 cout<<"\n\n\nAll Raecord delated :---";
+             }
+             if(a==2) 
+             {
+                 for (int i=0;i<total;i++)
+                 {
+                     if(  rollno==arr4[i])
+                     {
+                         for (int j=i;j<total;j++)
+                         {
+                             arr1[j]=arr1[j+1];
+                             arr2[j]=arr2[j+1];
+                             arr3[j]=arr3[j+1];
+                             arr4[j]=arr4[j+1];
+                             arr5[j]=arr5[j+1];
+                         }
+                         
+                     }
+                 }
+             total--;
+             }
+         }
+         void searchdata()
+         {
+             string  rollno;
+             cout<<"\n\n\nEnter the roll no of teh student do you want to teh search :--";
+             cin>>rollno;
+             for(int i=0;i<total;i++)
+             {
+                 if (rollno==arr4[i])
+                 {
+                 cout<<"\n\n\n Show data "<<i+1;
+                 cout<<"\n\n\n The name of the student is :--"<<arr1[i];
+                 cout<<"\n\n\n The div of the student is the :--"<<arr2[i];
+                 cout<<"\n\n\n The course of the student is :--"<<arr3[i];
+                 cout<<"\n\n\n The rollno of the student is :--"<<arr4[i];
+                 cout<<"\n\n\n The contact number of the studengt :--"<<arr5[i];
+                
+                 
+                 }
+             }
+         }
+         void updatedata()
+         {
+             string  rollno;
+             cout<<"\n\n\nEnter the roll no of teh student do you want to teh search :--";
+             cin>>rollno;
+             for(int i=0;i<total;i++)
+             {
+                 if (rollno==arr4[i])
+                 {
+                 cout<<"\n\n\n Show data "<<i+1;
+                 cout<<"\n\n\n The name of the student is :--"<<arr1[i];
+                 cout<<"\n\n\n The div of the student is the :--"<<arr2[i];
+                 cout<<"\n\n\n The course of the student is :--"<<arr3[i];
+                 cout<<"\n\n\n The rollno of the student is :--"<<arr4[i];
+                 cout<<"\n\n\n The contact number of the studengt :--"<<arr5[i];
+                 cout<<"Enter the new data:--";
+                 cout<<"\n\n\n The name of the student is :--"<<arr1[i];
+                 cout<<"\n\n\n The div of the student is the :--"<<arr2[i];
+                 cout<<"\n\n\n The course of the student is :--"<<arr3[i];
+                 cout<<"\n\n\n The rollno of the student is :--"<<arr4[i];
+                 cout<<"\n\n\n The contact number of the studengt :--"<<arr5[i];
+                
+                 
+                 
+                 }
+             }
+         }
+         
+    
+};
+int main()
+{
+    complex s1;
+    do {
+        s1.menue();
+        int option;
+        cout<<"\n\n\nEnter teh your choie :--";
+        cin>>option;
+        switch(option)
+        {
+            case 1:
+               cout<<" Enter teh student data:--";
+               s1.setdata();
+               break;
+            case 2 :
+               cout <<"show data of the student :--";
+                s1.showdata();
+                 break;
+            case 3:cout<<" Delate the data of the student wich you want :--";
+                s1.delatedata();
+                break;
+            case 4:
+                 cout <<" Search teh student data :--";
+                s1.updatedata();
+                 break;
+            case 5:
+                cout<<" update the student data:--";
+                 s1.searchdata();
+                break;
+        }
+        
+    }while(1);
+}
+
